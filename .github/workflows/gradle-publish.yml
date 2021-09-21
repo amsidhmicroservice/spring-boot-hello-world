@@ -81,6 +81,7 @@ jobs:
       - name: Install Helm
         run: |
           curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+          helm version
 
       # Deploy the Docker image to the GKE cluster
       - name: Deploy Hello-World using helm chart
