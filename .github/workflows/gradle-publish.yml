@@ -13,7 +13,7 @@ on:
 env:
   GKE_CLUSTER_NAME: spring-boot-hello-world-cluster
   GKE_ZONE: us-central1-c
-
+  DEPLOYMENT_NAME: spring-boot-hello-world
 
 jobs:
   build:
@@ -86,7 +86,9 @@ jobs:
       # Deploy the Docker image to the GKE cluster
       - name: Deploy Hello-World using helm chart
         run: |
-          helm install --generate-name helm/
+          helm install --generate-name helm/ --wait
+          kubectl rollout status deployment/$DEPLOYMENT_NAME
+          kubectl get services -o wide
 
 
 

@@ -1,6 +1,6 @@
 image:
   version: latest
-imageName: amsidhmicroservice/spring-boot-hello-world:${image.version}
+imageName: amsidhmicroservice/spring-boot-hello-world:latest
 port: 8181
 name: spring-boot-hello-world
 healthCheck: /
