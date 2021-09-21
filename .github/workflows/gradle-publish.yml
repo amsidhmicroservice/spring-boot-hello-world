@@ -54,7 +54,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: amsidhmicroservice/spring-boot-hello-world:latest
+          tags: amsidhmicroservice/spring-boot-hello-world:latest,amsidhmicroservice/spring-boot-hello-world:0.0.1-SNAPSHOT
 
       - name: Setup GCloud CLI
         uses: google-github-actions/setup-gcloud@master
@@ -74,7 +74,7 @@ jobs:
       # Deploy Currency Service images to the GKE cluster
       - name: Deployment to the GKE Cluster
         run: |-
-          kubectl apply -f deployment/currencyconversion-deployment.yaml,deployment/currencyexchange-deployment.yaml
+          kubectl apply -f deployment/hello-world-deployment.yaml
           kubectl get services -o wide
 
 
