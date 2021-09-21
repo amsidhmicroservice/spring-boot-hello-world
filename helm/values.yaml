@@ -1,0 +1,16 @@
+image:
+  version: latest
+imageName: amsidhmicroservice/spring-boot-hello-world:${image.version}
+port: 8181
+name: spring-boot-hello-world
+healthCheck: /
+serviceType: LoadBalancer  # To be uncommented for spring-boot-hello-world
+
+version: 0.0.1-SNAPSHOT
+minReadySeconds: 45
+resourceRequestMemory: 512Mi
+resourceLimitsMemory: 1024Mi
+restartPolicy: Always
+terminationGracePeriodSeconds: 30
+numberOfReplicas: 2
+
