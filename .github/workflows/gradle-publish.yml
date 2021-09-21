@@ -71,11 +71,21 @@ jobs:
         run: |-
           gcloud container clusters get-credentials "$GKE_CLUSTER_NAME" --zone "$GKE_ZONE"
 
-      # Deploy Currency Service images to the GKE cluster
-      - name: Deployment to the GKE Cluster
-        run: |-
-          kubectl apply -f deployment/hello-world-deployment.yaml
-          kubectl get services -o wide
+      # Deploy Hello-World Service images to the GKE cluster
+#      - name: Deployment to the GKE Cluster
+#        run: |-
+#          kubectl apply -f deployment/hello-world-deployment.yaml
+#          kubectl get services -o wide
+
+      # Install helm
+      - name: Install Helm
+        run: |
+          curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+      # Deploy the Docker image to the GKE cluster
+      - name: Deploy Hello-World using helm chart
+        run: |
+          helm install --generate-name helm/
 
 
 
