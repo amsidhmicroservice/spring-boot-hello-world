@@ -54,6 +54,8 @@ jobs:
 
     - name: Build and push
       id: docker_build
+      run: |
+        ls -al
       uses: docker/build-push-action@v2
       with:
         push: true
