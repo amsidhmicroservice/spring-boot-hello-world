@@ -10,9 +10,9 @@ on:
     branches: [ master ]
   release:
     types: [ created ]
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron: '30 4,17 * * *'
+#  schedule:
+#    # * is a special character in YAML so you have to quote this string
+#    - cron: '30 4,17 * * *'
 
 env:
   GKE_CLUSTER_NAME: spring-boot-hello-world-cluster
