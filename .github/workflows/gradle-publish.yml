@@ -98,7 +98,7 @@ jobs:
 
       # Install helm ========Third  Way Using Helm========================
       - name: Helm Deployment Using inbuilt github action
-        uses: hahow/install-helm-chart-action@v1
+        uses: hahow/install-helm-chart-action@v1.0.3
         with:
           gcloud_auth_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           gcloud_project_id: ${{ secrets.GCP_PROJECT_ID }}
