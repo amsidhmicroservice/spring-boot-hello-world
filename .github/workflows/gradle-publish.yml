@@ -106,7 +106,7 @@ jobs:
           cluster_region: ${{ secrets.GKE_CLUSTER_ZONE }}
           release_namespace: ${{ secrets.GKE_CLUSTER_NAMESPACE }}
           release_name: ${{ secrets.RELEASE_NAME }}
-          chart_name: ./helm/charts/spring-boot-hello-world
+          chart_name: ./helm/
           helm_upgrade_args: |
             --set image.tag=${{ github.sha }}
 

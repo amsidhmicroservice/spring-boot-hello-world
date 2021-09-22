@@ -1,6 +1,7 @@
 image:
-  version: latest
-imageName: amsidhmicroservice/spring-boot-hello-world:0.0.1-SNAPSHOT
+  repository: amsidhmicroservice/spring-boot-hello-world
+  tag: 0.0.1-SNAPSHOT
+
 port: 8181
 name: spring-boot-hello-world
 healthCheck: /
