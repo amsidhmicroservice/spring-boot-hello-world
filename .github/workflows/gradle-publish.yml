@@ -90,9 +90,6 @@ jobs:
       # Get the GKE credentials so we can deploy to the cluster
       - name: Get the GKE credentials
         run: |-
-           echo GCP_PROJECT_ID "$GCP_PROJECT_ID"
-           echo GKE_CLUSTER_NAME "$GKE_CLUSTER_NAME"
-           echo GKE_CLUSTER_ZONE "$GKE_CLUSTER_ZONE"
            gcloud container clusters get-credentials "$GKE_CLUSTER_NAME" --zone "$GKE_CLUSTER_ZONE" --project "$GCP_PROJECT_ID"
 
       # Deploy Hello-World Service images to the GKE cluster ===============First Way with kubectl apply=======
