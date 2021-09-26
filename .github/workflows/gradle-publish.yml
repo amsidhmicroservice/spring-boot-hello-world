@@ -15,9 +15,10 @@ on:
 #    - cron: '30 4,17 * * *'
 
 env:
-  GKE_CLUSTER_NAME: spring-boot-hello-world-cluster
-  GKE_CLUSTER_ZONE: us-central1-c
-  DEPLOYMENT_NAME: spring-boot-hello-world
+  GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
+  GKE_CLUSTER_ZONE: ${{ secrets.GKE_CLUSTER_ZONE }}
+  DEPLOYMENT_NAME: ${{ secrets.DEPLOYMENT_NAME }}
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
 
 jobs:
   build:
