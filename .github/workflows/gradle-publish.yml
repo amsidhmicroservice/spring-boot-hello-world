@@ -27,7 +27,7 @@ jobs:
 
   build_push:
     if: |
-      env.GKE_ACTION_EXECUTION_FLAG == true
+      {{ env.GKE_ACTION_EXECUTION_FLAG }} == true
     name: Build job
     runs-on: ubuntu-latest
     permissions:
