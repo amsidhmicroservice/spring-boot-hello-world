@@ -15,7 +15,7 @@ on:
     - cron: '30 4,17 * * *'
 
 env:
-  BUILD_PUSH_FLAG: true
+  BUILD_PUSH_FLAG: false
   GKE_DEPLOY_FLAG: true
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
@@ -98,7 +98,7 @@ jobs:
 
   deploy_gke:
     needs: [ prejob, build_push ]
-    if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG=='true'}}
+    if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG=='true'}} && always()
     name: Deploy the application on GKE Cluster using helm chart
     runs-on: ubuntu-latest
     permissions:
