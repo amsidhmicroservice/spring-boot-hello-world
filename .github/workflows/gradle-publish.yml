@@ -41,7 +41,7 @@ jobs:
 
   build_push:
     needs: [ prejob ]
-    if: ${{needs.prejob.outputs.BUILD_PUSH_FLAG=='true'}}
+    if: ${{needs.prejob.outputs.BUILD_PUSH_FLAG==true}}
     name: Build job
     runs-on: ubuntu-latest
     permissions:
@@ -99,7 +99,7 @@ jobs:
 
   deploy_gke:
     needs: [ prejob, build_push ]
-    if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG=='true'}}
+    if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG==true}}
     name: Deploy the application on GKE Cluster
     runs-on: ubuntu-latest
     permissions:
