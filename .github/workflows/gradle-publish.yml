@@ -29,8 +29,8 @@ jobs:
     name: Initializing environment variable used at build_push and  deploy_gke job level
     runs-on: ubuntu-latest
     outputs:
-      BUILD_PUSH_FLAG: ${{ steps.setvar.outputs.BUILD_PUSH_FLAG }}
-      GKE_DEPLOY_FLAG: ${{ steps.setvar.outputs.GKE_DEPLOY_FLAG }}
+      BUILD_PUSH_FLAG: ${{ steps.set_job_level_env.outputs.BUILD_PUSH_FLAG }}
+      GKE_DEPLOY_FLAG: ${{ steps.set_job_level_env.outputs.GKE_DEPLOY_FLAG }}
     steps:
       - name: set environment variable used at job level
         id: set_job_level_env
