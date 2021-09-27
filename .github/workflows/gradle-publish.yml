@@ -99,7 +99,6 @@ jobs:
   deploy_gke:
     needs: [ prejob, build_push ]
     if: |
-      always() &&
       ${{needs.prejob.outputs.GKE_DEPLOY_FLAG=='true'}}
     name: Deploy the application on GKE Cluster using helm chart
     runs-on: ubuntu-latest
