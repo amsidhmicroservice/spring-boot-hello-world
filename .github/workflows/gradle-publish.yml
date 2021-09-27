@@ -15,7 +15,7 @@ on:
     - cron: '30 4,17 * * *'
 
 env:
-  BUILD_PUSH_FLAG: false
+  BUILD_PUSH_FLAG: true
   GKE_DEPLOY_FLAG: true
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
