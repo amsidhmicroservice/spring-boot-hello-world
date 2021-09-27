@@ -104,6 +104,9 @@ jobs:
         run: |-
           gcloud container clusters get-credentials "$GKE_CLUSTER_NAME" --zone "$GKE_CLUSTER_ZONE" --project "$GCP_PROJECT_ID"
 
+
+      - uses: actions/checkout@v2
+
       # Deploy using helm Charts========================
       - name: Helm Deployment Using builtin github action
         uses: hahow/install-helm-chart-action@v1.0.3
