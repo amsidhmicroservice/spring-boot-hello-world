@@ -33,7 +33,7 @@ jobs:
       GKE_DEPLOY_FLAG: ${{ steps.setvar.outputs.GKE_DEPLOY_FLAG }}
     steps:
       - name: set environment variable used at job level
-        id: set job level env
+        id: set_job_level_env
         run: |
           echo "::set-output name=BUILD_PUSH_FLAG::$BUILD_PUSH_FLAG"
           echo "::set-output name=GKE_DEPLOY_FLAG::$GKE_DEPLOY_FLAG"
