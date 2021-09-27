@@ -42,7 +42,7 @@ jobs:
   build_push:
     needs: [ prejob ]
     if: ${{needs.prejob.outputs.BUILD_PUSH_FLAG}}
-    name: Build job
+    name: Build and Push to docker hub job
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -100,7 +100,7 @@ jobs:
   deploy_gke:
     needs: [ prejob, build_push ]
     if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG}}
-    name: Deploy the application on GKE Cluster
+    name: Deploy the application on GKE Cluster using helm chart
     runs-on: ubuntu-latest
     permissions:
       contents: read
