@@ -130,9 +130,9 @@ jobs:
         with:
           context: .
           gcloud_auth_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-          gcloud_project_id: ${{ secrets.GCP_PROJECT_ID }}
-          cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
-          cluster_region: ${{ secrets.GKE_CLUSTER_ZONE }}
+          gcloud_project_id: ${{ env.GCP_PROJECT_ID }}
+          cluster_name: ${{ env.GKE_CLUSTER_NAME }}
+          cluster_region: ${{ env.GKE_CLUSTER_ZONE }}
           release_namespace: ${{ secrets.GKE_CLUSTER_NAMESPACE }}
           release_name: ${{ secrets.RELEASE_NAME }}
           chart_name: ./helm/
