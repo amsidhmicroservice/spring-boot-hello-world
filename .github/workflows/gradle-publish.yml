@@ -100,7 +100,6 @@ jobs:
     needs: [ prejob, build_push ]
     if: |
       always() &&
-   #   (needs.build_push.result == 'success' || needs.build_push.result == 'skipped') &&
       ${{needs.prejob.outputs.GKE_DEPLOY_FLAG=='true'}}
     name: Deploy the application on GKE Cluster using helm chart
     runs-on: ubuntu-latest
