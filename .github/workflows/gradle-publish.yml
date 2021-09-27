@@ -95,7 +95,6 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-
   deploy_gke:
     needs: [ prejob, build_push ]
     if: |
