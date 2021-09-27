@@ -16,7 +16,7 @@ on:
 
 env:
   BUILD_PUSH_FLAG: true
-  GKE_DEPLOY_FLAG: true
+  GKE_DEPLOY_FLAG: false
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
   GKE_CLUSTER_ZONE: ${{ secrets.GKE_CLUSTER_ZONE }}
