@@ -27,7 +27,7 @@ jobs:
 
   build_push:
     if: |
-      build_push == 'true'
+      'build_push' == 'true'
     name: Build job
     runs-on: ubuntu-latest
     permissions:
