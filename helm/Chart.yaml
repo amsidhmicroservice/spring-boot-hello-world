@@ -2,5 +2,5 @@ name: spring-boot-hello-boot-chart
 apiVersion: v1
 appVersion: latest
 description: This is Spring-Boot-Hello-World Application
-version: 0.0.1-SNAPSHOT
+version: 0.0.2-SNAPSHOT
 

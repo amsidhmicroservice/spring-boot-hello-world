@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: spring-boot-hello-world
-    version: 0.0.1-SNAPSHOT
+    version: 0.0.2-SNAPSHOT
   name: spring-boot-hello-world
   namespace: default
 spec:
@@ -21,7 +21,7 @@ spec:
     metadata:
       labels:
         app: spring-boot-hello-world
-        version: 0.0.1-SNAPSHOT
+        version: 0.0.2-SNAPSHOT
     spec:
       containers:
         - image: amsidhmicroservice/spring-boot-hello-world:latest
@@ -58,7 +58,7 @@ kind: Service
 metadata:
   labels:
     app: spring-boot-hello-world
-    version: 0.0.1-SNAPSHOT
+    version: 0.0.2-SNAPSHOT
   name: spring-boot-hello-world
 spec:
   ports:
@@ -66,5 +66,5 @@ spec:
       port: 8181
   selector:
     app: spring-boot-hello-world
-    version: 0.0.1-SNAPSHOT
+    version: 0.0.2-SNAPSHOT
   type: LoadBalancer

@@ -89,7 +89,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:latest,${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:0.0.1-SNAPSHOT
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:latest,${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:0.0.2-SNAPSHOT
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
