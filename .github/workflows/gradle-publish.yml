@@ -85,7 +85,8 @@ jobs:
 
   deploy_gke:
     name: Deploy the application on GKE Cluster
-    if: 'GKE_ACTION_EXECUTION_FLAG' == 'true'
+    if: |
+      'GKE_ACTION_EXECUTION_FLAG' == 'true'
 
     runs-on: ubuntu-latest
     permissions:
