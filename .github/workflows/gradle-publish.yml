@@ -26,6 +26,8 @@ env:
 jobs:
 
   build_push:
+    if: |
+      build_push == 'true'
     name: Build job
     runs-on: ubuntu-latest
     permissions:
@@ -83,7 +85,8 @@ jobs:
 
   deploy_gke:
     name: Deploy the application on GKE Cluster
-    needs: [ build_push ]
+    if: 'GKE_ACTION_EXECUTION_FLAG' == 'true'
+
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -111,6 +114,7 @@ jobs:
       - name: Helm Deployment Using builtin github action
         uses: hahow/install-helm-chart-action@v1.0.3
         with:
+          context: .
           gcloud_auth_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           gcloud_project_id: ${{ secrets.GCP_PROJECT_ID }}
           cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
