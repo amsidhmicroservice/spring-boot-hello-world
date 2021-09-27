@@ -15,7 +15,7 @@ on:
 #    - cron: '30 4,17 * * *'
 
 env:
-  BUILD_PUSH_FLAG: true
+  BUILD_PUSH_FLAG: false
   GKE_DEPLOY_FLAG: false
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GKE_CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
@@ -41,7 +41,7 @@ jobs:
 
   build_push:
     needs: [ prejob ]
-    if: ${{needs.prejob.outputs.BUILD_PUSH_FLAG}}
+    if: ${{needs.prejob.outputs.BUILD_PUSH_FLAG=='true'}}
     name: Build and Push to docker hub job
     runs-on: ubuntu-latest
     permissions:
@@ -99,7 +99,7 @@ jobs:
 
   deploy_gke:
     needs: [ prejob, build_push ]
-    if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG}}
+    if: ${{needs.prejob.outputs.GKE_DEPLOY_FLAG=='true'}}
     name: Deploy the application on GKE Cluster using helm chart
     runs-on: ubuntu-latest
     permissions:
