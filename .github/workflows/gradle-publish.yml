@@ -83,7 +83,6 @@ jobs:
 
   deploy_gke:
     name: Deploy the application on GKE Cluster
-    if: ${{ secrets.GKE_ACTION_EXECUTION_FLAG }}
     needs: [ build_push ]
     runs-on: ubuntu-latest
     permissions:
